@@ -2,7 +2,7 @@
 
 ## General Points
 
-This is some life coding from the HTL Leonding
+This is some life coding from the HTL Leonding:
 
 * Generics
 * Stack

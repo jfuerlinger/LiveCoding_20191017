@@ -7,14 +7,38 @@ namespace MyStack.Core
 {
     public class MyFancyStack : IStack
     {
+        private Node _head;
+
         public void Push(object value)
         {
-            throw new NotImplementedException();
+            _head = new Node(_head, value);
         }
 
         public object Pop()
         {
-            throw new NotImplementedException();
+            object value = _head?.Value;
+            _head = _head?.Next;
+
+            return value;
         }
+
+
+        private class Node
+        {
+
+            public Node(Node next, object value)
+            {
+                this.Next = next;
+                this.Value = value;
+            }
+
+            public object Value { get; set; }
+            public Node Next { get; set; }
+        }
+
+
     }
+
+
+
 }

@@ -18,7 +18,7 @@ namespace MyStack.Core
         {
             object value = _head?.Value;
             _head = _head?.Next;
-
+            
             return value;
         }
 

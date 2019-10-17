@@ -19,5 +19,19 @@ namespace MyStack.Test
             // Assert
             Assert.IsNull(value);
         }
+
+        [TestMethod]
+        public void MyStack_PushAndPop_ShouldReturnCorrectElement()
+        {
+            // Arrange
+            IStack stack = new MyFancyStack();
+            stack.Push(4);
+
+            // Act
+            int value = (int)stack.Pop();
+
+            // Assert
+            Assert.AreEqual(value, 4);
+        }
     }
 }

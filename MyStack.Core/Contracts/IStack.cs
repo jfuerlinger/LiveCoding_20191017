@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MyStack.Core.Contracts
+﻿namespace MyStack.Core.Contracts
 {
-    public interface IStack
+    public interface IStack<T>
     {
-        void Push(object value);
-        object Pop();
+        void Push(T value);
+        T Pop();
     }
 }

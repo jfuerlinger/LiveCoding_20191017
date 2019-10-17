@@ -11,10 +11,23 @@ namespace MyStack.Test
         public void MyStack_PopEmptyStack_ShouldReturnNull()
         {
             // Arrange
-            IStack stack = new MyFancyStack();
+            IStack<int> stack = new MyFancyStack<int>();
 
             // Act
-            object value = stack.Pop();
+            int value = stack.Pop();
+
+            // Assert
+            Assert.AreEqual(value, 0);
+        }
+
+        [TestMethod]
+        public void MyStack_PopEmptyEmployeeStack_ShouldReturnNull()
+        {
+            // Arrange
+            IStack<Employee> stack = new MyFancyStack<Employee>();
+
+            // Act
+            Employee value = stack.Pop();
 
             // Assert
             Assert.IsNull(value);
@@ -24,11 +37,11 @@ namespace MyStack.Test
         public void MyStack_PushAndPop_ShouldReturnCorrectElement()
         {
             // Arrange
-            IStack stack = new MyFancyStack();
+            IStack<int> stack = new MyFancyStack<int>();
             stack.Push(4);
 
             // Act
-            int value = (int)stack.Pop();
+            int value = stack.Pop();
 
             // Assert
             Assert.AreEqual(value, 4);

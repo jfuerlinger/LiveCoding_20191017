@@ -5,35 +5,40 @@ using System.Text;
 
 namespace MyStack.Core
 {
-    public class MyFancyStack : IStack
+    public class MyFancyStack<T> : IStack<T>
     {
-        private Node _head;
+        private Node<T> _head;
 
-        public void Push(object value)
+        public void Push(T value)
         {
-            _head = new Node(_head, value);
+            _head = new Node<T>(_head, value);
         }
 
-        public object Pop()
+        public T Pop()
         {
-            object value = _head?.Value;
-            _head = _head?.Next;
+            if(_head == null)
+            {
+                return default(T);
+            }
+
+            T value = _head.Value;
+            _head = _head.Next;
             
             return value;
         }
 
 
-        private class Node
+        private class Node<T>
         {
 
-            public Node(Node next, object value)
+            public Node(Node<T> next, T value)
             {
                 this.Next = next;
                 this.Value = value;
             }
 
-            public object Value { get; set; }
-            public Node Next { get; set; }
+            public T Value { get; set; }
+            public Node<T> Next { get; set; }
         }
 
 

@@ -1,4 +1,4 @@
-# Description for the LiveCoding Session on 20191017
+# Description for the LiveCoding Session on 17.10.2019
 
 ## General Points
 
